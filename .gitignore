@@ -1,2 +1,4 @@
+*.txt
 .env
+test.py
 /src/commands/__pycache__/
