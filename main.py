@@ -1,5 +1,4 @@
-import src.application as app
+from src.application import ZefirBot
 
-# Rodar projeto
-if (__name__ == "__main__"):
-    app()
+if __name__ == "__main__":
+    ZefirBot.run_bot()
