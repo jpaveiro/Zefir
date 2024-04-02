@@ -12,7 +12,7 @@ class MongoDB_Utils:
             "user_id": user_id,
             "level": 1,
             "level_xp": 0,
-            "money": 0.0,
+            "money": 0.00,
             "medals": [],
         }
 
@@ -23,8 +23,8 @@ class MongoDB_Utils:
     
     async def register_if_not_exists(self, user_id: int) -> None:
         if (self.fetch_user_by_id(user_id) == None):
-            print("[REGISTRO] {user_id} não encontrado, registrando...")
+            print(f"[REGISTRO] {user_id} não encontrado, registrando...")
             try:
                 await self.insert_user(user_id)
             except Exception as e:
-                print(f"[ERRO] Erro ao registrar usuário: {e}")
+                print(f"[REGISTRO] Erro ao registrar usuário com ID {user_id}: {e}")

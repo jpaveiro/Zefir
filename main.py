@@ -1,4 +1,4 @@
-from application import ZefirBot
+import application as app
 
-if __name__ == "__main__":
-    ZefirBot().run_bot()
+if (__name__ == "__main__"):
+    app.run()

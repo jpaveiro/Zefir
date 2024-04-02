@@ -11,7 +11,6 @@ class Perfil(commands.Cog):
     async def perfil(self, ctx):
         user = ctx.author
 
-        await self.utils.register_if_not_exists(user.id)
         response = self.utils.fetch_user_by_id(user.id)
 
         embed = discord.Embed(
