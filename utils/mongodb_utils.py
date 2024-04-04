@@ -40,3 +40,19 @@ class MongoDB_Utils:
                 user_upped = True
             self.collection_users.update_one({"user_id": user_id}, {"$set": user})
         return user_upped
+    
+    def give_medal(self, user_id: int, medal: str) -> None:
+        user = self.fetch_user_by_id(user_id)
+        medal = medal.lower()
+
+        if (user != None):
+            medals = user.get("medals")
+            match(medal):
+                case "bot_owner":
+                    medal = "- O Grande Mestre! (👑)"
+                case _:
+                    return
+            if (medals == None):
+                medals = []
+            medals.append(medal)
+            self.collection_users.update_one({"user_id": user_id}, {"$set": {"medals": medals}})
