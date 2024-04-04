@@ -5,6 +5,7 @@ import os
 import time
 from utils.mongodb_utils import MongoDB_Utils as Utils
 import datetime
+import random
 
 load_dotenv()
 bot = commands.Bot(intents=discord.Intents.all())
@@ -20,6 +21,12 @@ async def on_ready():
 async def before_invoke(ctx):
     print(f"[{datetime.datetime.now().strftime("%Y-%m-%d | %H:%M:%S")}] Comando {ctx.command} foi invocado por {ctx.author}.")
     await utils.register_if_not_exists(ctx.author.id)
+
+@bot.after_invoke
+async def after_invoke(ctx):
+    xp_to_increase = random.randint(10, 23)
+    if utils.increase_xp(ctx.author.id, xp_to_increase):
+        await ctx.send(f"**🎉 Parabéns, {ctx.author.mention}! Você subiu de nível! 🎉**")
 
 not_load = [""]
 for filename in os.listdir("commands/"):

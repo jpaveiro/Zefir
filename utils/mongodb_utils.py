@@ -28,3 +28,15 @@ class MongoDB_Utils:
                 await self.insert_user(user_id)
             except Exception as e:
                 print(f"[REGISTRO] Erro ao registrar usuário com ID {user_id}: {e}")
+    
+    def increase_xp(self, user_id: int, xp: int) -> bool:
+        user = self.fetch_user_by_id(user_id)
+        user_upped = False
+        if (user != None):
+            user["level_xp"] += xp
+            if (user["level_xp"] >= 550):
+                user["level_xp"] = 0
+                user["level"] += 1
+                user_upped = True
+            self.collection_users.update_one({"user_id": user_id}, {"$set": user})
+        return user_upped
