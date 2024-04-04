@@ -19,5 +19,5 @@ TOKEN=SeuTokenAqui
 ```
 
 # Links Úteis
-#### Criar aplicação: https://discord.com/developers/applications
-#### MongoDB Service e Compass: ttps://www.mongodb.com/try/download/community
+- Criar aplicação: https://discord.com/developers/applications
+- MongoDB Service e Compass: https://www.mongodb.com/try/download/community
