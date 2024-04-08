@@ -3,12 +3,12 @@ from discord.ext import commands
 from utils.mongodb_utils import MongoDB_Utils
 
 class Perfil(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot) -> None:
         self.bot = bot
         self.utils = MongoDB_Utils()
 
     @discord.slash_command(name="perfil", description="Veja seu perfil.")
-    async def perfil(self, ctx):
+    async def perfil(self, ctx) -> None:
         user = ctx.author
         response = self.utils.fetch_user_by_id(user.id)
         medals = response.get('medals')
@@ -31,5 +31,5 @@ class Perfil(commands.Cog):
         embed.set_thumbnail(url=user.avatar.url)
         await ctx.respond(embed=embed)
 
-def setup(bot):
+def setup(bot) -> None:
     bot.add_cog(Perfil(bot))
