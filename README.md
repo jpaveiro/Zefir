@@ -18,6 +18,12 @@ O Zefir requer a configuração de variáveis de ambiente para funcionar correta
 TOKEN=SeuTokenAqui
 ```
 
-# Links Úteis
+### Links Úteis
 - Criar aplicação: https://discord.com/developers/applications
 - MongoDB Service e Compass: https://www.mongodb.com/try/download/community
+
+# Rodar projeto
+Execute na pasta raiz do projeto:
+```bash
+python main.py
+```
