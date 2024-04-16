@@ -15,6 +15,7 @@ class RolarDado(commands.Cog):
             return
         embed = discord.Embed(
             title="🎲 Temos o resultado!",
+            color=0x36393F
             )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar.url)
         embed.add_field(name="↔️ Qtd de lados", value=lados, inline=True)

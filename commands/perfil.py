@@ -21,7 +21,7 @@ class Perfil(commands.Cog):
         embed = discord.Embed(
             title=f"👤 @{user.name}",
             description="Confira seu progresso:",
-            color= 0xecec53
+            color=0x36393F
         )
         embed.add_field(name="⭐ ID", value=user.id, inline=False)
         embed.add_field(name="🪙 Conta Zefir", value=f"$ {response.get("money")}", inline=True)
