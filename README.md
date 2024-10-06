@@ -1,4 +1,4 @@
-# Zefir - Discord API
+# Zefir - Discord Bot
 
 # Requisitos:
 - Python 3.12+
